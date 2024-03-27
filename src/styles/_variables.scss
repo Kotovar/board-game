@@ -1,0 +1,10 @@
+$count: 50;
+
+:root {
+	--container-height: 100vh;
+	--cell-width: calc(var(--container-height) / calc(#{$count} / 1.35));
+
+	--bg-color-body: #b9ebbb;
+
+	--transition-duration: 0.2s;
+}
