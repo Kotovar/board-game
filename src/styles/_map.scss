@@ -1,0 +1,33 @@
+#root {
+	max-height: var(--container-height);
+	height: var(--container-height);
+	aspect-ratio: 1;
+	margin-inline: auto;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-height: 100%;
+
+	.raw:nth-child(2n + 1) {
+		left: calc(var(--cell-width) / 2);
+	}
+}
+
+.raw {
+	display: flex;
+	position: relative;
+
+	@for $i from 2 through $count {
+		&:nth-child(#{$i}) {
+			top: calc(var(--cell-width) / -3.75 * ($i - 1));
+		}
+	}
+}
+
+.column {
+	width: var(--cell-width);
+	aspect-ratio: 1;
+	clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
